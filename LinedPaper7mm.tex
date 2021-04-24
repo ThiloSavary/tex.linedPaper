@@ -1,0 +1,21 @@
+\documentclass[a4paper]{article}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\pagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+
+\definecolor{Denim}{RGB}{17,134,187}
+
+\tikzset{normal line/.style={gray, very thin, Denim}} 
+\tikzset{red line/.style={thick, red}} 
+
+\foreach \y in {1.5,2.2,...,28.1} 
+      \draw[style=normal line]($(current page.north west)+(0,-\y)$) -- ($(current page.north east)+(0,-\y)$); 
+
+\draw [red line] ($(current page.north west)+(3,0)$) -- ($(current page.south west)+(3,0)$);
+
+\end{tikzpicture}
+
+\end{document}
